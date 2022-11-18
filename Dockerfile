@@ -1,20 +1,26 @@
-# Use whatever version you are running locally (see node -v)
-FROM node:alpine
-
-# Install dependencies (you are already in /app)
-COPY package.json package-lock.json ./
-COPY yarn.lock ./
-
-ENV PORT 8080
-
-RUN yarn install
-
-# Add rest of the client code
-# .dockerignore needs to skip node_modules
+FROM node:alpine as builder
+# Set the working directory to /app inside the container
+WORKDIR /app
+# Copy app files
 COPY . .
+COPY yarn.lock /app
+# Build the app
+ENV PORT 3000
+
+RUN yarn
 
 RUN yarn build
 
-EXPOSE 8080
+EXPOSE 3000
 
-CMD ["yarn", "start"]
+# Bundle static assets with nginx
+FROM nginx:1.21.0-alpine as production
+ENV NODE_ENV production
+# Copy built assets from `builder` image
+COPY --from=builder /app/build /usr/share/nginx/html
+# Add your nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Expose port
+EXPOSE 3000
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
