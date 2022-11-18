@@ -72,7 +72,7 @@ export default function IndexNavbar() {
             </button>
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by Creative Tim
+            Designed and Coded by Mar LLC
           </UncontrolledTooltip>
           <button
             type="button"
