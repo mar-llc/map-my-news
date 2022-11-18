@@ -16,14 +16,14 @@ gcloud builds submit --substitutions=_LOCATION="us-central1",_REPOSITORY="map-my
 ```
 6. Give cloud build permission to push to cloud run:
 ```
-gcloud projects add-iam-policy-binding asap-training \
-  --member "serviceAccount:<project_id>@cloudbuild.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding <project_id> \
+  --member "serviceAccount:<numeric_project_id>@cloudbuild.gserviceaccount.com" \
   --role roles/run.admin
 ```
 ```
 gcloud iam service-accounts add-iam-policy-binding \
-  <project_id>-compute@developer.gserviceaccount.com \
-  --member="serviceAccount:<project_id>@cloudbuild.gserviceaccount.com" \
+  <numeric_project_id>-compute@developer.gserviceaccount.com \
+  --member="serviceAccount:<numeric_project_id>@cloudbuild.gserviceaccount.com" \
   --role="roles/iam.serviceAccountUser"
 ```
 5. create a cloud build trigger based `cloudbuild.yaml` on release/push to branch, for continuous deployment and add substitutions for `_LOCATION`,`_REPOSITORY`, and `_IMAGE`.
