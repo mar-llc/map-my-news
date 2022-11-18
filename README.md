@@ -12,6 +12,6 @@ docker build . --tag map-my-news:v0.0.1
 3. Create a cloud run service based on the pushed `map-my-news:v1.0.0` image
 4. Use the `cloudbuild.yaml` in this repo to re-deploy to cloud run
 ```
-gcloud builds submit --substitutions=_LOCATION="us",_REPOSITORY="map-my-news",_IMAGE="map-my-news:v0.0.1" .
+gcloud builds submit --substitutions=_LOCATION="us-central1",_REPOSITORY="map-my-news",_IMAGE="map-my-news:v0.0.1" .
 ```
 5. create a cloud build trigger based `cloudbuild.yaml` on release/push to branch, for continuous deployment
