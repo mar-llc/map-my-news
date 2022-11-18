@@ -7,6 +7,8 @@ COPY yarn.lock /app
 # Build the app
 ENV PORT 3000
 
+RUN yarn
+
 RUN yarn build
 
 EXPOSE 3000
