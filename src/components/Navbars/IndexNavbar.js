@@ -58,7 +58,7 @@ export default function IndexNavbar() {
             <strong onClick={scrollTohome}> Map News</strong>
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by Creative Tim
+            Designed and Coded by Mar LLC
           </UncontrolledTooltip>
           <button aria-expanded={collapseOpen} className="navbar-toggler navbar-toggler" onClick={toggleCollapse}>
             <span className="navbar-toggler-bar bar1" />
