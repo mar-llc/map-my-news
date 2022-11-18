@@ -6,13 +6,13 @@ React app based on an [open-source template](https://www.creative-tim.com/produc
 1. Create a container registry repository with the name `map-my-news`
 2. Build Docker image locally:
 ```
-docker build . --tag map-my-news:v0.0.1 
+docker build . --tag map-my-news:v1.0.0 
 ```
 2. Push the first image `map-my-news:v1.0.0` built based on your `Dockerfile` to container registry
 3. Create a cloud run service based on the pushed `map-my-news:v1.0.0` image
 4. Use the `cloudbuild.yaml` in this repo to re-deploy to cloud run:
 ```
-gcloud builds submit --substitutions=_LOCATION="us-central1",_REPOSITORY="map-my-news",_IMAGE="map-my-news:v0.0.1" .
+gcloud builds submit --substitutions=_LOCATION="us-central1",_REPOSITORY="map-my-news",_IMAGE="map-my-news:v1.0.0" .
 ```
 6. Give cloud build permission to push to cloud run:
 ```
@@ -21,4 +21,4 @@ gcloud iam service-accounts add-iam-policy-binding \
   --member="serviceAccount:<project_id>@cloudbuild.gserviceaccount.com" \
   --role="roles/iam.serviceAccountUser"
 ```
-5. create a cloud build trigger based `cloudbuild.yaml` on release/push to branch, for continuous deployment
+5. create a cloud build trigger based `cloudbuild.yaml` on release/push to branch, for continuous deployment and add substitutions for `_LOCATION`,`_REPOSITORY`, and `_IMAGE`.
