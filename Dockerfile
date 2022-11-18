@@ -1,10 +1,14 @@
-FROM node:16-alpine as builder
+FROM node:alpine as builder
 # Set the working directory to /app inside the container
 WORKDIR /app
 # Copy app files
 COPY . .
 # Build the app
+ENV PORT 3000
+
 RUN yarn build
+
+EXPOSE 3000
 
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
