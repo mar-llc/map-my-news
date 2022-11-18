@@ -68,7 +68,7 @@ export default function IndexNavbar() {
               }}
               onClick={scrollTohome}
             >
-              <strong> Map News</strong>
+              <img src="/apple-icon.png" alt="icon" height={50} width={50} />
             </button>
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
