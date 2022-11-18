@@ -88,5 +88,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://github.com/mar-llc/map-my-news#readme",
+  "devDependencies": {}
 }
