@@ -5,7 +5,7 @@ FROM node:alpine
 COPY package.json package-lock.json ./
 COPY yarn.lock ./
 
-ENV PORT 3000
+ENV PORT 8080
 
 RUN yarn install
 
@@ -15,6 +15,6 @@ COPY . .
 
 RUN yarn build
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["yarn", "start"]
