@@ -1,28 +1,11 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container } from 'reactstrap';
 
 export default function PageHeader() {
   return (
-    <div className="page-header header-filter">
+    <div className="page-header header-filter" id="home-section">
       <div className="squares square1" />
       <div className="squares square2" />
       <div className="squares square3" />
@@ -34,8 +17,7 @@ export default function PageHeader() {
         <div className="content-center brand">
           <h1 className="h1-seo">BLK• React</h1>
           <h3 className="d-none d-sm-block">
-            A beautiful Design System for Bootstrap 4 (reactstrap) and React.
-            It's Free and Open Source.
+            A beautiful Design System for Bootstrap 4 (reactstrap) and React. It's Free and Open Source.
           </h3>
         </div>
       </Container>

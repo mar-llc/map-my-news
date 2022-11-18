@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // reactstrap components
 import {
   Collapse,
@@ -30,13 +30,13 @@ import {
   Nav,
   Container,
   Row,
-  Col
-} from "reactstrap";
+  Col,
+} from 'reactstrap';
 
-export default function Navbars() {
+export default function Aboutus() {
   return (
-    <div className="section section-navbars">
-      <img alt="..." className="path" src={require("assets/img/path3.png")} />
+    <div className="section section-navbars" id="aboutUs-section">
+      <img alt="..." className="path" src={require('assets/img/path3.png')} />
       <Container id="menu-dropdown">
         <Row>
           <Col md="6">
@@ -54,18 +54,12 @@ export default function Navbars() {
                 <Collapse navbar isOpen={false}>
                   <Nav navbar>
                     <NavItem className="active">
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         <p>Link</p>
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         <p>Link</p>
                       </NavLink>
                     </NavItem>
@@ -83,22 +77,13 @@ export default function Navbars() {
                         <p>Dropdown</p>
                       </DropdownToggle>
                       <DropdownMenu aria-labelledby="navbarDropdownMenuLink">
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                       </DropdownMenu>
@@ -123,22 +108,13 @@ export default function Navbars() {
                 <Collapse navbar isOpen={false}>
                   <Nav className="ml-auto" navbar>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
                         <i aria-hidden={true} className="tim-icons icon-send" />
                       </NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i
-                          aria-hidden={true}
-                          className="tim-icons icon-single-02"
-                        />
+                      <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                        <i aria-hidden={true} className="tim-icons icon-single-02" />
                       </NavLink>
                     </NavItem>
                     <UncontrolledDropdown nav>
@@ -151,46 +127,25 @@ export default function Navbars() {
                         nav
                         onClick={(e) => e.preventDefault()}
                       >
-                        <i
-                          aria-hidden={true}
-                          className="tim-icons icon-settings-gear-63"
-                        />
+                        <i aria-hidden={true} className="tim-icons icon-settings-gear-63" />
                       </DropdownToggle>
-                      <DropdownMenu
-                        aria-labelledby="navbarDropdownMenuLink"
-                        right
-                      >
+                      <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
                         <DropdownItem header>Dropdown header</DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Another action
                         </DropdownItem>
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Something else here
                         </DropdownItem>
                         <div className="divider" />
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           Separated link
                         </DropdownItem>
                         <div className="divider" />
-                        <DropdownItem
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                           One more separated link
                         </DropdownItem>
                       </DropdownMenu>

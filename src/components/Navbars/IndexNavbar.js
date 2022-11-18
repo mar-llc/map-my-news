@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 // reactstrap components
@@ -58,15 +41,21 @@ export default function IndexNavbar() {
   const onCollapseExited = () => {
     setCollapseOut('');
   };
-  const scrollToDownload = () => {
-    document.getElementById('download-section').scrollIntoView({ behavior: 'smooth' });
+  const scrollToaboutUs = () => {
+    document.getElementById('aboutUs-section').scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollTohome = () => {
+    document.getElementById('home-section').scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollTomap = () => {
+    document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <Navbar className={'fixed-top ' + color} color-on-scroll="100" expand="lg">
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <strong> Map News</strong>
+            <strong onClick={scrollTohome}> Map News</strong>
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Creative Tim
@@ -86,11 +75,6 @@ export default function IndexNavbar() {
         >
           <div className="navbar-collapse-header">
             <Row>
-              <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <strong> Map News</strong>
-                </a>
-              </Col>
               <Col className="collapse-close text-right" xs="6">
                 <button aria-expanded={collapseOpen} className="navbar-toggler" onClick={toggleCollapse}>
                   <i className="tim-icons icon-simple-remove" />
@@ -100,17 +84,17 @@ export default function IndexNavbar() {
           </div>
           <Nav navbar>
             <NavItem>
-              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
+              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollTohome}>
                 <i className="tim-icons icon-cloud-download-93" /> Home
               </Button>
             </NavItem>
             <NavItem>
-              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
+              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollTomap}>
                 <i className="tim-icons icon-cloud-download-93" /> Map
               </Button>
             </NavItem>
             <NavItem>
-              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
+              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToaboutUs}>
                 <i className="tim-icons icon-cloud-download-93" /> About Us
               </Button>
             </NavItem>

@@ -15,10 +15,10 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import classnames from "classnames";
+import React from 'react';
+import classnames from 'classnames';
 // plugin that creates slider
-import Slider from "nouislider";
+import Slider from 'nouislider';
 
 // reactstrap components
 import {
@@ -32,10 +32,10 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
-} from "reactstrap";
+  Col,
+} from 'reactstrap';
 
-export default function Basics() {
+export default function Map() {
   const [inputFocus, setInputFocus] = React.useState(false);
   const slider1 = React.useRef(null);
   const slider2 = React.useRef(null);
@@ -44,18 +44,18 @@ export default function Basics() {
       start: [40],
       connect: [true, false],
       step: 1,
-      range: { min: 0, max: 100 }
+      range: { min: 0, max: 100 },
     });
     Slider.create(slider2.current, {
       start: [20, 60],
       connect: [false, true, false],
       step: 1,
-      range: { min: 0, max: 100 }
+      range: { min: 0, max: 100 },
     });
   }, []);
   return (
-    <div className="section section-basic" id="basic-elements">
-      <img alt="..." className="path" src={require("assets/img/path1.png")} />
+    <div className="section section-basic" id="map-section">
+      <img alt="..." className="path" src={require('assets/img/path1.png')} />
       <Container>
         <h2 className="title">Basic Elements</h2>
         <h3>Buttons</h3>
@@ -72,18 +72,10 @@ export default function Basics() {
               <i className="tim-icons icon-heart-2" />
               With Icon
             </Button>
-            <Button
-              className="btn-icon btn-round"
-              color="primary"
-              type="button"
-            >
+            <Button className="btn-icon btn-round" color="primary" type="button">
               <i className="tim-icons icon-heart-2" />
             </Button>
-            <Button
-              className="btn-simple btn-round"
-              color="primary"
-              type="button"
-            >
+            <Button className="btn-simple btn-round" color="primary" type="button">
               Simple
             </Button>
           </Col>
@@ -148,26 +140,18 @@ export default function Basics() {
             </Col>
             <Col lg="3" sm="6">
               <FormGroup className="has-success">
-                <Input
-                  className="form-control-success"
-                  defaultValue="Success"
-                  type="text"
-                />
+                <Input className="form-control-success" defaultValue="Success" type="text" />
               </FormGroup>
             </Col>
             <Col lg="3" sm="6">
               <FormGroup className="has-danger">
-                <Input
-                  className="form-control-danger"
-                  defaultValue="Error Input"
-                  type="email"
-                />
+                <Input className="form-control-danger" defaultValue="Error Input" type="email" />
               </FormGroup>
             </Col>
             <Col lg="3" sm="6">
               <InputGroup
                 className={classnames({
-                  "input-group-focus": inputFocus
+                  'input-group-focus': inputFocus,
                 })}
               >
                 <InputGroupAddon addonType="prepend">
@@ -232,38 +216,21 @@ export default function Basics() {
             <p className="category">Radios</p>
             <FormGroup check className="form-check-radio">
               <Label check>
-                <Input
-                  defaultValue="option1"
-                  id="exampleRadios1"
-                  name="exampleRadios"
-                  type="radio"
-                />
+                <Input defaultValue="option1" id="exampleRadios1" name="exampleRadios" type="radio" />
                 <span className="form-check-sign" />
                 Radio is off
               </Label>
             </FormGroup>
             <FormGroup check className="form-check-radio">
               <Label check>
-                <Input
-                  defaultChecked
-                  defaultValue="option2"
-                  id="exampleRadios1"
-                  name="exampleRadios"
-                  type="radio"
-                />
+                <Input defaultChecked defaultValue="option2" id="exampleRadios1" name="exampleRadios" type="radio" />
                 <span className="form-check-sign" />
                 Radio is on
               </Label>
             </FormGroup>
             <FormGroup check className="form-check-radio" disabled>
               <Label check>
-                <Input
-                  defaultValue="option3"
-                  disabled
-                  id="exampleRadios2"
-                  name="exampleRadios1"
-                  type="radio"
-                />
+                <Input defaultValue="option3" disabled id="exampleRadios2" name="exampleRadios1" type="radio" />
                 <span className="form-check-sign" />
                 Disabled radio is off
               </Label>
