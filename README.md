@@ -17,7 +17,7 @@ gcloud builds submit --substitutions=_LOCATION="us-central1",_REPOSITORY="map-my
 6. Give cloud build permission to push to cloud run:
 ```
 gcloud projects add-iam-policy-binding asap-training \
-  --member "serviceAccount:639520437548@cloudbuild.gserviceaccount.com" \
+  --member "serviceAccount:<project_id>@cloudbuild.gserviceaccount.com" \
   --role roles/run.admin
 ```
 ```
