@@ -55,7 +55,7 @@ export default function Map() {
   }, []);
   return (
     <div className="section section-basic" id="map-section">
-      <img alt="..." className="path" src={require('assets/img/path1.png')} />
+      <img alt="..." className="path" src="assets/img/path1.png" />
       <Container>
         <h2 className="title">Basic Elements</h2>
         <h3>Buttons</h3>
@@ -162,8 +162,8 @@ export default function Map() {
                 <Input
                   placeholder="Left Font Awesome Icon"
                   type="text"
-                  onFocus={(e) => setInputFocus(true)}
-                  onBlur={(e) => setInputFocus(false)}
+                  onFocus={() => setInputFocus(true)}
+                  onBlur={() => setInputFocus(false)}
                 />
               </InputGroup>
             </Col>
