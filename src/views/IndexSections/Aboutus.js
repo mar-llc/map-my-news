@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2022 Mar LLC (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Mar LLC
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
 // reactstrap components
 import {
@@ -36,7 +19,7 @@ import {
 export default function Aboutus() {
   return (
     <div className="section section-navbars" id="aboutUs-section">
-      <img alt="..." className="path" src={require('assets/img/path3.png')} />
+      <img alt="..." className="path" src="assets/img/path3.png" />
       <Container id="menu-dropdown">
         <Row>
           <Col md="6">
@@ -46,7 +29,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Menu
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -66,7 +49,7 @@ export default function Aboutus() {
                     <UncontrolledDropdown nav>
                       <DropdownToggle
                         aria-expanded={false}
-                        aria-haspopup={true}
+                        aria-haspopup
                         caret
                         color="default"
                         data-toggle="dropdown"
@@ -100,7 +83,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Icons
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -109,12 +92,12 @@ export default function Aboutus() {
                   <Nav className="ml-auto" navbar>
                     <NavItem>
                       <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <i aria-hidden={true} className="tim-icons icon-send" />
+                        <i aria-hidden className="tim-icons icon-send" />
                       </NavLink>
                     </NavItem>
                     <NavItem>
                       <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                        <i aria-hidden={true} className="tim-icons icon-single-02" />
+                        <i aria-hidden className="tim-icons icon-single-02" />
                       </NavLink>
                     </NavItem>
                     <UncontrolledDropdown nav>
@@ -127,7 +110,7 @@ export default function Aboutus() {
                         nav
                         onClick={(e) => e.preventDefault()}
                       >
-                        <i aria-hidden={true} className="tim-icons icon-settings-gear-63" />
+                        <i aria-hidden className="tim-icons icon-settings-gear-63" />
                       </DropdownToggle>
                       <DropdownMenu aria-labelledby="navbarDropdownMenuLink" right>
                         <DropdownItem header>Dropdown header</DropdownItem>
@@ -167,7 +150,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Primary color
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -205,7 +188,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Info Color
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -240,7 +223,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Success Color
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -275,7 +258,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Warning Color
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -315,7 +298,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Danger Color
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -353,7 +336,7 @@ export default function Aboutus() {
                 <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
                   Transparent
                 </NavbarBrand>
-                <button className="navbar-toggler" aria-expanded={false}>
+                <button type="button" className="navbar-toggler" aria-expanded={false}>
                   <span className="navbar-toggler-bar bar1" />
                   <span className="navbar-toggler-bar bar2" />
                   <span className="navbar-toggler-bar bar3" />
@@ -383,7 +366,6 @@ export default function Aboutus() {
               </Collapse>
             </Container>
           </Navbar>
-          {/* End Navbar Transparent*/}
         </div>
       </div>
     </div>
