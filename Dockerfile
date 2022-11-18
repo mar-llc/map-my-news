@@ -4,9 +4,9 @@ FROM node:alpine
 # Install dependencies (you are already in /app)
 COPY package.json package-lock.json ./
 COPY yarn.lock ./
-COPY .env ./
+
 ENV PORT 3000
-ENV PUPPETEER_SKIP_DOWNLOAD=true
+
 RUN yarn install
 
 # Add rest of the client code
