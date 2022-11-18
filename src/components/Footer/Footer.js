@@ -15,19 +15,10 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 // reactstrap components
-import {
-  Button,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip
-} from "reactstrap";
+import { Button, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
 
 export default function Footer() {
   return (
@@ -45,17 +36,17 @@ export default function Footer() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   Landing
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/register-page" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   Register
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/profile-page" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   Profile
                 </NavLink>
               </NavItem>
@@ -64,24 +55,16 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
-                  Contact Us
-                </NavLink>
+                <NavLink href="">Contact Us</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://creative-tim.com/about-us?ref=blkdsr-footer">
-                  About Us
-                </NavLink>
+                <NavLink href="">About Us</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://creative-tim.com/blog?ref=blkdsr-footer">
-                  Blog
-                </NavLink>
+                <NavLink href="">Blog</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://opensource.org/licenses/MIT">
-                  License
-                </NavLink>
+                <NavLink href="">License</NavLink>
               </NavItem>
             </Nav>
           </Col>
