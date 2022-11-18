@@ -217,3 +217,16 @@ Facebook: <https://www.facebook.com/CreativeTim>
 Dribbble: <https://dribbble.com/creativetim>
 
 Instagram: <https://www.instagram.com/CreativeTimOfficial>
+
+
+## How to deploy to GCP
+
+Push Docker image:
+```
+gcloud builds submit --tag gcr.io/we-care-35980/b2b-bs:1.0.0 . 
+```
+Deploy to Cloud run:
+```
+gcloud run deploy --image=gcr.io/we-care-35980/b2b-bs:1.0.0 --platform managed --port 3000
+gcloud run services list --platform managed
+```
