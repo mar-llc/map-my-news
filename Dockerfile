@@ -3,6 +3,7 @@ FROM node:alpine as builder
 WORKDIR /app
 # Copy app files
 COPY . .
+COPY yarn.lock /app
 # Build the app
 ENV PORT 3000
 
