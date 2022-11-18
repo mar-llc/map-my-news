@@ -21,14 +21,9 @@ import { Link } from 'react-router-dom';
 import {
   Button,
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
-  NavLink,
   Nav,
   Container,
   Row,
@@ -71,8 +66,7 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>BLK• </span>
-            Design System React
+            <strong> Map News</strong>
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Creative Tim
@@ -94,7 +88,7 @@ export default function IndexNavbar() {
             <Row>
               <Col className="collapse-brand" xs="6">
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  BLK•React
+                  <strong> Map News</strong>
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
@@ -105,43 +99,22 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
-            <UncontrolledDropdown nav>
-              <DropdownToggle
-                caret
-                color="default"
-                data-toggle="dropdown"
-                href="#pablo"
-                nav
-                onClick={(e) => e.preventDefault()}
-              >
-                <i className="fa fa-cogs d-lg-none d-xl-none" />
-                Getting started
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-with-icons">
-                <DropdownItem href="/">
-                  <i className="tim-icons icon-paper" />
-                  Documentation
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/register-page">
-                  <i className="tim-icons icon-bullet-list-67" />
-                  Register Page
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/landing-page">
-                  <i className="tim-icons icon-image-02" />
-                  Landing Page
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
-                  <i className="tim-icons icon-single-02" />
-                  Profile Page
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-
             <NavItem>
               <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
-                <i className="tim-icons icon-cloud-download-93" /> Download
+                <i className="tim-icons icon-cloud-download-93" /> Home
               </Button>
             </NavItem>
+            <NavItem>
+              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
+                <i className="tim-icons icon-cloud-download-93" /> Map
+              </Button>
+            </NavItem>
+            <NavItem>
+              <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToDownload}>
+                <i className="tim-icons icon-cloud-download-93" /> About Us
+              </Button>
+            </NavItem>
+            <NavItem></NavItem>
           </Nav>
         </Collapse>
       </Container>
