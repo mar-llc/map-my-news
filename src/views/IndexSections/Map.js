@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
+const coordonate = [
+  { lat: 51.5073509, lng: -0.1277583, name: 'London' },
+  { lat: 48.5, lng: 2.2, name: 'Paris' },
+  { lat: 34.052235, lng: -118.243683, name: 'Los Angeles' },
+  { lat: 40.73061, lng: -73.935242, name: 'New York' },
+];
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
@@ -14,28 +20,19 @@ const MyMapComponent = compose(
   withGoogleMap
 )((props) => (
   <GoogleMap defaultZoom={2} defaultCenter={{ lat: 0, lng: 0 }}>
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
+    {coordonate.map((val, key) => (
+      <Marker position={val} onClick={props.onMarkerClick} key={key} />
+    ))}
   </GoogleMap>
 ));
 export default function Map() {
-  const [isMarkerShown, setisMarkerShown] = useState(false);
-
-  const delayedShowMarker = () => {
-    setTimeout(() => {
-      setisMarkerShown(true);
-    }, 3000);
-  };
-  useEffect(() => {
-    delayedShowMarker();
-  }, []);
-  const handleMarkerClick = () => {
-    setisMarkerShown(false);
-    delayedShowMarker();
+  const handleMarkerClick = (val) => {
+    alert(`${JSON.stringify(val.latLng)}`);
   };
 
   return (
     <div style={{ minWidth: '100vh' }} id="map-section">
-      <MyMapComponent isMarkerShown={isMarkerShown} onMarkerClick={handleMarkerClick} />
+      <MyMapComponent onMarkerClick={handleMarkerClick} />
     </div>
   );
 }
