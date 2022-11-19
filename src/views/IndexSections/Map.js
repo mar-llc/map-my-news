@@ -4,7 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
+    googleMapURL:
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb3HOGxF3p9OKAJraSWU7TEmjsP-bBruI&v=3.exp&libraries=geometry,drawing,places',
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
@@ -32,5 +33,9 @@ export default function Map() {
     delayedShowMarker();
   };
 
-  return <MyMapComponent isMarkerShown={isMarkerShown} onMarkerClick={handleMarkerClick} />;
+  return (
+    <div style={{ minWidth: '100vh' }} id="map-section">
+      <MyMapComponent isMarkerShown={isMarkerShown} onMarkerClick={handleMarkerClick} />
+    </div>
+  );
 }
