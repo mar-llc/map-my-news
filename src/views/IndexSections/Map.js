@@ -1,14 +1,26 @@
 import React from 'react';
+
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import swal from 'sweetalert';
 
 const coordonate = [
-  { lat: 51.5073509, lng: -0.1277583, name: 'London' },
-  { lat: 48.5, lng: 2.2, name: 'Paris' },
-  { lat: 34.052235, lng: -118.243683, name: 'Los Angeles' },
-  { lat: 40.73061, lng: -73.935242, name: 'New York' },
+  { lat: 54, lng: -2, country: 'gb' },
+  { lat: 46, lng: 2, country: 'fr' },
+  { lat: 60, lng: 100, country: 'ru' },
+  { lat: 38, lng: -97, country: 'us' },
+  { lat: 40, lng: -4, country: 'es' },
+  { lat: 49, lng: 32, country: 'ua' },
+  { lat: 60, lng: -95, country: 'ca' },
+  { lat: -27, lng: 133, country: 'au' },
+  { lat: -10, lng: -55, country: 'br' },
+  { lat: 51, lng: 9, country: 'de' },
+  { lat: 20, lng: 77, country: 'in' },
+  { lat: 42.5, lng: 12.5, country: 'it' },
+  { lat: 36, lng: 138, country: 'jp' },
+  { lat: 35, lng: 105, country: 'cn' },
 ];
+const key = 'pub_137296461b4d4190969cf4f8630fddbdb8ee7';
 const MyMapComponent = compose(
   withProps({
     googleMapURL:
@@ -31,36 +43,28 @@ export default function Map() {
     let coord = JSON.stringify(val.latLng);
     coord = JSON.parse(coord);
     const index = coordonate.findIndex((x) => x.lat === coord.lat && x.lng === coord.lng);
-    const corsURL = 'https://cors-anywhere.herokuapp.com/';
-    const url = `${corsURL}https://newsapi.org/v2/everything?' +
-          'q=${coordonate[index].name}&' +
-          'from=2022-11-21&' +
-          'sortBy=popularity&' +
-          'apiKey=86542658aff54ea5b24c4303fd2bd8d7`;
+
+    const url = `https://newsdata.io/api/1/news?apikey=${key}&country=${coordonate[index].country}`;
     const req = new Request(url);
     fetch(req)
       .then((response) => response.json())
       .then((responseJSON) => {
         const newRes = responseJSON;
-        console.log(newRes);
+
         swal({
-          title: newRes.articles[0].title,
-          text: newRes.articles[0].content,
+          title: newRes.results[0].title,
+          text: `${(newRes?.results[0]?.content || newRes?.results[0]?.description || '').slice(0, 300)} ...`,
           icon: 'info',
           buttons: [true, 'See Full Article'],
-        }).then((okay) => {
-          if (okay && newRes.articles.lenght) {
-            window.location.href = newRes.articles[0].url;
-          }
-        });
-      })
-      .catch(
-        swal({
-          title: 'Error',
-          text: 'No News at the moment. Try again later.',
-          icon: 'warning',
         })
-      );
+          .then((okay) => {
+            if (okay) {
+              window.location.href = newRes.results[0].link;
+            }
+          })
+
+          .catch((err) => console.log(err));
+      });
   };
 
   return (
