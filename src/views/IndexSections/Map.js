@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import swal from 'sweetalert';
 
 const coordonate = [
   { lat: 51.5073509, lng: -0.1277583, name: 'London' },
@@ -26,13 +27,45 @@ const MyMapComponent = compose(
   </GoogleMap>
 ));
 export default function Map() {
-  const handleMarkerClick = (val) => {
-    alert(`${JSON.stringify(val.latLng)}`);
+  const getnews = (val) => {
+    let coord = JSON.stringify(val.latLng);
+    coord = JSON.parse(coord);
+    const index = coordonate.findIndex((x) => x.lat === coord.lat && x.lng === coord.lng);
+
+    const url =
+      `https://newsapi.org/v2/top-headlines?` +
+      `q=${coordonate[index].name}&` +
+      `sortBy=popularity&` +
+      `apiKey=7b5f48dbc9e348db8616f70b532aff14`;
+    const req = new Request(url);
+    fetch(req)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        const newRes = responseJSON;
+        console.log(newRes);
+        swal({
+          title: newRes.articles[0].title,
+          text: newRes.articles[0].content,
+          icon: 'info',
+          buttons: [true, 'See Full Article'],
+        }).then((okay) => {
+          if (okay && newRes.articles.lenght) {
+            window.location.href = newRes.articles[0].url;
+          }
+        });
+      })
+      .catch(
+        swal({
+          title: 'Error',
+          text: 'No News at the moment. Try again later.',
+          icon: 'warning',
+        })
+      );
   };
 
   return (
     <div style={{ minWidth: '100vh' }} id="map-section">
-      <MyMapComponent onMarkerClick={handleMarkerClick} />
+      <MyMapComponent onMarkerClick={getnews} />
     </div>
   );
 }
