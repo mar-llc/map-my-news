@@ -64,7 +64,7 @@ export default function Map() {
   };
 
   return (
-    <div style={{ minWidth: '100vh' }} id="map-section">
+    <div id="map-section">
       <MyMapComponent onMarkerClick={getnews} />
     </div>
   );
