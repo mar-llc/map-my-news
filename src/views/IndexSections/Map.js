@@ -31,12 +31,12 @@ export default function Map() {
     let coord = JSON.stringify(val.latLng);
     coord = JSON.parse(coord);
     const index = coordonate.findIndex((x) => x.lat === coord.lat && x.lng === coord.lng);
-
-    const url =
-      `https://newsapi.org/v2/top-headlines?` +
-      `q=${coordonate[index].name}&` +
-      `sortBy=popularity&` +
-      `apiKey=7b5f48dbc9e348db8616f70b532aff14`;
+    const corsURL = 'https://cors-anywhere.herokuapp.com/';
+    const url = `${corsURL}https://newsapi.org/v2/everything?' +
+          'q=${coordonate[index].name}&' +
+          'from=2022-11-21&' +
+          'sortBy=popularity&' +
+          'apiKey=86542658aff54ea5b24c4303fd2bd8d7`;
     const req = new Request(url);
     fetch(req)
       .then((response) => response.json())
