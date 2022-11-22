@@ -3,12 +3,12 @@ import React from 'react';
 
 export default function Aboutus() {
   return (
-    <div className="section section-navbars" id="aboutUs-section" style={{ display: 'flex', gap: '2vw' }}>
-      <div style={{ marginLeft: '2vw' }}>
+    <div className="section section-navbars" id="aboutUs-section">
+      <div>
         <img src="/bottombg.jpg" alt="aboutus" width={720} height={480} />
       </div>
-      <div style={{ maxWidth: '40vw' }}>
-        <h3 style={{ marginTop: '20vh' }}>About project</h3>
+      <div className="aboutus-text">
+        <h3>About project</h3>
         <p>
           Map news is where geography, media, and journalism can coexist. Together creating a union that will help
           spread global news instantaneously. Not only does this service provide a fun interactive experience, but it

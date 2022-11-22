@@ -250,6 +250,7 @@ button,
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: button;
+  appearance: button;
 }
 button:not(:disabled),
 [type='button']:not(:disabled),
@@ -300,13 +301,16 @@ progress {
 [type='search'] {
   outline-offset: -2px;
   -webkit-appearance: none;
+  appearance: none;
 }
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
+  appearance: none;
 }
 ::-webkit-file-upload-button {
   font: inherit;
   -webkit-appearance: button;
+  appearance: button;
 }
 output {
   display: inline-block;
@@ -16673,7 +16677,6 @@ hr.line-deafult {
 }
 .section-navbars {
   padding-bottom: 0;
-  overflow: hidden;
 }
 .section-navbars .navbar {
   z-index: 2;
@@ -17599,7 +17602,6 @@ hr.line-deafult {
   padding: 0 5px;
 }
 .color-swatch-header .pass-fail-item {
-  float: left;
   display: inline-block;
   text-align: center;
   padding: 2px;
@@ -17649,7 +17651,7 @@ hr.line-deafult {
 }
 .table-colors .swatch {
   display: inline-block;
-  float: left;
+
   width: 40px;
   height: 40px;
   margin-right: 20px;
@@ -17665,7 +17667,7 @@ hr.line-deafult {
   font-weight: 600;
   line-height: 10px;
   display: inline-block;
-  float: left;
+
   margin: 5px 10px 0 0;
   padding: 2px 4px;
   letter-spacing: 0.05em;
@@ -18364,6 +18366,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
   -moz-transition: 300ms ease 0s;
   -ms-transition: 300ms ease 0s;
   -o-transform: 300ms ease 0s;
+  transform: 300ms ease 0s;
   transition: 300ms ease 0s;
 }
 .noUi-active {
@@ -19947,7 +19950,7 @@ input.datetimepicker[data-color='yellow'] + .bootstrap-datetimepicker-widget.dro
   display: inline-block;
   font: normal normal normal 1em/1 'Nucleo';
   vertical-align: middle;
-  speak: none;
+
   text-transform: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -20118,7 +20121,7 @@ td.rdtYear:hover {
   display: inline-block;
   font: normal normal normal 1em/1 'Nucleo';
   vertical-align: middle;
-  speak: none;
+
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   font-size: 1rem;
@@ -20144,7 +20147,7 @@ td.rdtYear:hover {
   display: inline-block;
   font: normal normal normal 1em/1 'Nucleo';
   vertical-align: middle;
-  speak: none;
+
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   background-image: none;

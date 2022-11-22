@@ -36,6 +36,7 @@
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@testing-library/user-event": "14.4.1",
+    "autoprefixer": "10.4.5",
     "bootstrap": "4.5.3",
     "chart.js": "2.9.4",
     "classnames": "2.3.1",
@@ -46,10 +47,11 @@
     "moment": "2.29.4",
     "nouislider": "14.6.3",
     "perfect-scrollbar": "1.5.5",
-    "react": "18.2.0",
+    "postcss-loader": "^7.0.1",
+    "react": ">=16.8.0",
     "react-chartjs-2": "2.11.1",
     "react-datetime": "3.1.1",
-    "react-dom": "18.2.0",
+    "react-dom": ">=16.8.0",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "5.2.0",
     "react-scripts": "5.0.1",
@@ -103,6 +105,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.7.1"
   }
 }
