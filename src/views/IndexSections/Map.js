@@ -44,13 +44,13 @@ export default function Map() {
     coord = JSON.parse(coord);
     const index = coordonate.findIndex((x) => x.lat === coord.lat && x.lng === coord.lng);
 
-    const url = `https://newsdata.io/api/1/news?apikey=${key}&country=${coordonate[index].country}`;
+    const url = `https://newsdata.io/api/1/news?apikey=${key}&country=${coordonate[index].country}&language=en`;
     const req = new Request(url);
     fetch(req)
       .then((response) => response.json())
       .then((responseJSON) => {
         const newRes = responseJSON;
-
+        console.log(newRes);
         swal({
           title: newRes.results[0].title,
           text: `${(newRes?.results[0]?.content || newRes?.results[0]?.description || '').slice(0, 300)} ...`,
@@ -64,6 +64,14 @@ export default function Map() {
           })
 
           .catch((err) => console.log(err));
+      })
+      .catch((err) => {
+        console.log(err);
+        swal({
+          title: 'No News',
+          text: 'No News at the moment. Try again later.',
+          icon: 'warning',
+        });
       });
   };
 
