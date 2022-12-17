@@ -1,63 +1,55 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 // reactstrap components
 import { Button, NavItem, NavLink, Nav, Container, Row, Col, UncontrolledTooltip } from 'reactstrap';
 
 export default function Footer() {
+  const scrollToaboutUs = () => {
+    document.getElementById('aboutUs-section').scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollTohome = () => {
+    document.getElementById('home-section').scrollIntoView({ behavior: 'smooth' });
+  };
+  const scrollTomap = () => {
+    document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <footer className="footer">
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">BLK•</h1>
+            <h1 className="title">
+              Map my <br />
+              News
+            </h1>
           </Col>
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink to="/" tag={Link}>
+                <NavLink style={{ cursor: 'pointer' }} onClick={scrollTohome}>
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  Landing
+                <NavLink style={{ cursor: 'pointer' }} onClick={scrollTomap}>
+                  Map
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/" tag={Link}>
-                  Register
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/" tag={Link}>
-                  Profile
+                <NavLink style={{ cursor: 'pointer' }} onClick={scrollToaboutUs}>
+                  About Project
                 </NavLink>
               </NavItem>
             </Nav>
           </Col>
-          <Col md="3">
-            <Nav>
-              <NavItem>
-                <NavLink href="">Contact Us</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">About Us</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">Blog</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="">License</NavLink>
-              </NavItem>
-            </Nav>
-          </Col>
+
           <Col md="3">
             <h3 className="title">Follow us:</h3>
             <div className="btn-wrapper profile">
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
                 color="default"
-                href="https://twitter.com/creativetim"
+                href="#"
                 id="tooltip622135962"
                 target="_blank"
               >
@@ -69,7 +61,7 @@ export default function Footer() {
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
                 color="default"
-                href="https://www.facebook.com/creativetim"
+                href="#"
                 id="tooltip230450801"
                 target="_blank"
               >
@@ -81,7 +73,7 @@ export default function Footer() {
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
                 color="default"
-                href="https://dribbble.com/creativetim"
+                href="#"
                 id="tooltip318450378"
                 target="_blank"
               >

@@ -13,6 +13,9 @@ import {
   Col,
   UncontrolledTooltip,
 } from 'reactstrap';
+import HomeIcon from '@mui/icons-material/Home';
+import MapIcon from '@mui/icons-material/Map';
+import InfoIcon from '@mui/icons-material/Info';
 
 export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -104,17 +107,17 @@ export default function IndexNavbar() {
           <Nav navbar>
             <NavItem>
               <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollTohome}>
-                <i className="tim-icons icon-cloud-download-93" /> Home
+                <HomeIcon sx={{ fill: '#1890ff' }} /> Home
               </Button>
             </NavItem>
             <NavItem>
               <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollTomap}>
-                <i className="tim-icons icon-cloud-download-93" /> Map
+                <MapIcon sx={{ fill: '#1890ff' }} /> Map
               </Button>
             </NavItem>
             <NavItem>
               <Button className="nav-link d-none d-lg-block" color="default" onClick={scrollToaboutUs}>
-                <i className="tim-icons icon-cloud-download-93" /> About Us
+                <InfoIcon sx={{ fill: '#1890ff' }} /> About Project
               </Button>
             </NavItem>
             <NavItem />
